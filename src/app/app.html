@@ -1,0 +1,35 @@
+<header>
+  <!-- Adicionada a classe d-flex justify-content-between e align-items-center no container -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+    <div class="container-fluid px-4 d-flex justify-content-between align-items-center">
+
+      <!-- 1. Lado Esquerdo: Logo -->
+      <a class="btn d-inline-flex align-items-center gap-2 border-0 px-2 py-1" [routerLink]="['/']">
+        <img 
+          src="assets/AuraSpin.png" 
+          height="80" 
+          class="d-inline-block align-text-top"
+          alt="AuraSpin Logo"
+        >
+    </a>
+
+      <!-- 2. Centro: Botões de Categoria (Convertidos para routerLink) -->
+      <div class="btn-group align-items-center">
+        <a routerLink="/vitrine" class="btn btn-secondary">Mais Vendidos</a>
+        <a routerLink="/vitrine" class="btn btn-secondary">Conheça as Marcas</a> 
+        <a routerLink="/vitrine" class="btn btn-secondary">Promoções</a> 
+      </div>
+
+      <!-- 3. Lado Direito: Links de Acesso -->
+      <div class="btn-group align-items-center">
+        <a routerLink="/carrinho" class="btn btn-secondary">Carrinho</a>
+        <a routerLink="/login" class="btn btn-secondary">Login</a>
+      </div>
+
+    </div>
+  </nav>
+</header>
+
+<main class="container">
+  <router-outlet></router-outlet>
+</main>
