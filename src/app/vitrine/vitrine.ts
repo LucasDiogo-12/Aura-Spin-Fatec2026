@@ -11,9 +11,9 @@ interface Produto {
 }
 
 @Component({
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   selector: 'app-vitrine',
-  styleUrl: './vitrine.css',
+  styleUrl: './vitrine.css', 
   templateUrl: './vitrine.html',
   standalone: true,
 })
@@ -65,4 +65,30 @@ export class Vitrine
       descricao: 'Estampa camuflada militar com peso balanceado.'
     }
   ];
+
+  indiceAtual = 0;
+
+  get produtosVisiveis() {
+  return [
+    this.produtos[this.indiceAtual],
+    this.produtos[(this.indiceAtual + 1) % this.produtos.length],
+    this.produtos[(this.indiceAtual + 2) % this.produtos.length]
+  ];
+}
+
+  anterior() {
+  if (this.indiceAtual === 0) {
+    this.indiceAtual = this.produtos.length -1;
+  } else {
+    this.indiceAtual--;
+  }
+}
+
+proximo() {
+  if (this.indiceAtual === this.produtos.length -1) {
+    this.indiceAtual = 0;
+  } else {
+    this.indiceAtual++;
+  }
+}
 }
