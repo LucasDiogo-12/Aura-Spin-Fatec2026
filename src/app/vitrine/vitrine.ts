@@ -10,7 +10,6 @@ export interface Produto {
   descricao: string;
 }
 
-// 1. O array fica fora e antes do Decorator
 export const produtos: Produto[] = [
   {
     id: 1,
@@ -49,21 +48,27 @@ export const produtos: Produto[] = [
   },
   {
     id: 6,
-    nome: 'Fidget Spinner LED Brilha no Escuro',
-    preco: 29.90,
-    imagem: 'assets/FS-Led.png',
-    descricao: 'Luzes LED ajustáveis em cada uma das pontas.'
-  },
-  {
-    id: 7,
     nome: 'Fidget Spinner Camuflado',
     preco: 24.90,
     imagem: 'assets/FS-Camuflado.png',
     descricao: 'Estampa camuflada militar com peso balanceado.'
+  },
+  {
+    id: 7,
+    nome: 'Fidget Spinner LED Brilha no Escuro',
+    preco: 19.90,
+    imagem: 'assets/FS-Led.png',
+    descricao: 'Luzes LED ajustáveis em cada uma das pontas.'
+  },
+  {
+    id: 8,
+    nome: 'Fidget Spinner Camuflado Verde',
+    preco: 9.99,
+    imagem: 'assets/FS-Camuflado.png',
+    descricao: 'Estampa camuflada militar verde com peso balanceado.'
   }
 ];
 
-// 2. O @Component fica diretamente colado na classe Vitrine
 @Component({
   imports: [CommonModule, RouterLink],
   selector: 'app-vitrine',
@@ -72,6 +77,27 @@ export const produtos: Produto[] = [
   standalone: true,
 })
 export class Vitrine {
+  produtosEmPromocao = [
+    {
+      id: 7,
+      nome: 'Fidget Spinner LED Brilha no Escuro',
+      imagem: 'assets/FS-Led.png',
+      descricao: 'Luzes LED ajustáveis em cada uma das pontas.',
+      precoOriginal: 39.90,
+      precoPromocional: 19.90,
+      desconto: 20
+    },
+    {
+      id: 8,
+      nome: 'Fidget Spinner Camuflado Verde',
+      descricao: 'Estampa camuflada militar verde com peso balanceado.',
+      imagem: 'assets/FS-CamuVerde.png',
+      precoOriginal: 29.99,
+      precoPromocional: 9.99,
+      desconto: 20
+    }
+  ];
+
   produtos: Produto[] = produtos;
   mostrarAlerta = false;
 
@@ -101,7 +127,7 @@ export class Vitrine {
     }
   }
 
- adicionarAoCarrinho(produto: Produto) {
+ adicionarAoCarrinho(produto: any) {
   const carrinho = JSON.parse(localStorage.getItem('carrinho') || '[]');
 
   const itemExistente = carrinho.find(
@@ -113,6 +139,9 @@ export class Vitrine {
   } else {
     carrinho.push({
       id: produto.id,
+      nome: produto.nome,
+      preco: produto.precoPromocional || produto.preco,
+      imagem: produto.imagem,
       quantidade: 1
     });
   }

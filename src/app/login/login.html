@@ -1,22 +1,24 @@
-<h3>Faça seu login</h3>
+<form (ngSubmit)="validar()">
 
-<div class="alert alert-danger">
-  <strong>Verifique!</strong> Email ou senha invalidos.
-</div>
-
-<div class="row">
-        <div class="col">           
-            <label class="form-label">email:</label>
-            <input type="email" id="txtEmail" class="form-control">
-            <label class="form-label">senha:</label>
-            <input type="password" id="txtSenha" class="form-control"><br>
-            <button class="btn btn-outline-success w-100" >Entrar</button>
-        </div>
-        <div class="col">
-            Caso tenha esquecido sua senha<br>
-            <a href="reenvio" class="btn btn-outline-warning w-100">reenviar senha</a>
+  <div *ngIf="mostrarAviso" class="alert alert-warning alert-dismissible fade show my-3" role="alert">
+    <strong>Verifique!</strong> {{ mensagemErro }}
+  </div>
+  <div class="col">
+    <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-control" [(ngModel)]="email" name="email" placeholder="seuemail@gmail.com">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Senha</label>
+        <input type="password" class="form-control" [(ngModel)]="senha" name="senha">
+    </div>
+        <br>
+        <button class="btn btn-outline-success w-100" >Entrar</button>
+    </div>
             <br><br>
-            Ainda não tem cadastro<br>
-            <a href="cadastro" class="btn btn-outline-primary w-100">novo cadastro</a>
-        </div>
-</div>
+            <a routerLink="/esqueci" class="btn  w-100">Esqueci minha Senha</a>
+            <hr class="my-4">
+            <a href="cadastro" class="btn  w-100"> Ainda não tenho Cadastro</a>
+</form>
+
+  

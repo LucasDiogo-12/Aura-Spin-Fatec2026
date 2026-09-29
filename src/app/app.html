@@ -12,8 +12,8 @@
     </a>
 
       <div class="btn-group align-items-center">
-        <a routerLink="/vitrine" class="btn btn-secondary">Mais Vendidos</a>
-        <a routerLink="/vitrine" class="btn btn-secondary">Conheça as Marcas</a> 
+        <a href="#catalogo" class="btn btn-secondary">Catálogo de Itens</a>
+        <a href="#promocoes" class="btn btn-secondary">Promoções</a> 
         <a [routerLink]="['/carrinho']" class="btn btn-secondary position-relative">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
             <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l.84 4.479 9.144-.459L13.89 4zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
@@ -139,8 +139,7 @@
 
   <div class="text-center py-6">
 
-  <!-- Imagem com a classe condicional [class.rodando]="girando" -->
-    <img 
+     <img 
      src="assets/giraspinner.png" 
      height="55"
      alt="AuraSpin" 
@@ -149,8 +148,7 @@
      (click)="girando = !girando"
     >
   </div>
-      
-      <!-- Coluna 1: Marca & Slogan -->
+     
       <div class="col-md-4 text-center text-md-start">
         <button type="button" [routerLink]="['/vitrine']" style="border: none; background: none; padding: 0;">
            <img src="assets/AuraSpin.png" height="60" alt="AuraSpin Logo" class="mb-2">
@@ -165,7 +163,6 @@
           </div>
       </div>
 
-      <!-- Coluna 2: Navegação Rápida -->
       <div class="col-md-4 text-center">
         <h6 class="fw-bold mb-3 text-uppercase small text-secondary">Navegação</h6>
         <div class="d-flex flex-column align-items-center gap-2">
@@ -176,9 +173,6 @@
         </div>
       </div>
 
-
-
-      <!-- Coluna 3: Criadores -->
       <div class="col-md-4 text-center text-md-end">
         <h6 class="fw-bold mb-2 text-uppercase small text-secondary">Criadores</h6>
         <p class="small mb-3">Lucas Diogo</p>
@@ -193,7 +187,6 @@
 
     <hr class="my-4 border-secondary">
 
-    <!-- Direitos Autorais -->
     <div class="text-center text-muted small">
       © 2026 AuraSpin. Todos os direitos reservados.
     </div>

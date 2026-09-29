@@ -1,1 +1,43 @@
-<p>esqueci works!</p>
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-5">
+      <div class="card shadow-sm border-0 card-auraspin p-4">
+        
+        <div class="text-center mb-4">
+          <img src="assets/AuraSpin.png" alt="AuraSpin" height="50" class="mb-3">
+          <br><br>
+          <h2 class="fs-4 fw-bold text-dark">Recuperar Senha</h2>
+          <p class="small">
+            Digite o seu email e enviaremos as instruções para recuperação da senha
+          </p>
+        </div>
+
+        <form (ngSubmit)="validar()">
+
+          <div *ngIf="mostrarAviso" class="alert alert-warning alert-dismissible fade show my-3" role="alert">
+            <strong>Verifique!</strong> {{ mensagemErro }}
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control" [(ngModel)]="email" name="email" placeholder="seuemail@gmail.com">
+              </div>
+
+              <button type="submit" class="btn btn-outline-primary w-100">Enviar</button>
+            </div>
+          </div>
+
+        </form> 
+
+        <div class="text-center mt-3 border-top pt-3">
+          <a routerLink="/login" class="text-decoration-none small fw-bold preco-auraspin">
+            <i class="bi bi-arrow-left me-1"></i> Voltar para o Login
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

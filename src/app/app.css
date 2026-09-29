@@ -1,0 +1,7 @@
+.banner-auraspin {
+  background-image: url('/assets/banner.svg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  color: #ffffff;
+}
