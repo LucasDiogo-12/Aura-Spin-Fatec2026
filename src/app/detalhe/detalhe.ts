@@ -13,6 +13,7 @@ import { Produto, produtos } from '../vitrine/vitrine';
 
 export class Detalhe {
   produto!: Produto;
+  mostrarAlerta = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -48,10 +49,19 @@ export class Detalhe {
       'carrinho',
       JSON.stringify(carrinho)
     );
-  }
+
+    window.dispatchEvent(new Event('carrinhoAtualizado'));
+
+  this.mostrarAlerta = true;
+
+  setTimeout(() => {
+    this.mostrarAlerta = false;
+  }, 3000);
+}
 
   comprarAgora() {
     this.adicionarAoCarrinho();
     this.router.navigate(['/carrinho']);
   }
 }
+

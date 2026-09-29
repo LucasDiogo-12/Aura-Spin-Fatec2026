@@ -15,6 +15,7 @@ import { Produto, produtos } from '../vitrine/vitrine';
 export class Busca {
   
   termoBusca: string = '';
+  mostrarAlerta = false;
 
   // 2. CORREÇÃO: Atribuição do array 'produtos' em vez do nome da classe 'Vitrine'
   produtos: Produto[] = produtos;
@@ -61,5 +62,12 @@ export class Busca {
       'carrinho',
       JSON.stringify(carrinho)
     );
+
+    window.dispatchEvent(new Event('carrinhoAtualizado'));
+
+    
+    this.mostrarAlerta = true;
+
+    setTimeout(() => {this.mostrarAlerta = false;}, 3000);
   }
 }

@@ -73,6 +73,7 @@ export const produtos: Produto[] = [
 })
 export class Vitrine {
   produtos: Produto[] = produtos;
+  mostrarAlerta = false;
 
   indiceAtual = 0;
 
@@ -117,5 +118,12 @@ export class Vitrine {
   }
 
   localStorage.setItem('carrinho', JSON.stringify(carrinho));
+  window.dispatchEvent(new Event('carrinhoAtualizado'));
+
+  this.mostrarAlerta = true;
+
+    setTimeout(() => {
+      this.mostrarAlerta = false;
+    }, 3000);
  }
 }

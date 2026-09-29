@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, HostListener  } from '@angular/core';
 import { RouterOutlet, RouterLink } from '@angular/router';
 
 @Component({
@@ -11,6 +11,17 @@ export class App {
   protected readonly title = signal('aura-spin');
   girando: boolean = false;
   private timer: any;
+
+  quantidadeCarrinho = 0;
+  @HostListener('window:carrinhoAtualizado')
+    atualizarQuantidadeCarrinho() {
+    const carrinho = JSON.parse(localStorage.getItem('carrinho') || '[]');
+
+    this.quantidadeCarrinho = carrinho.reduce(
+      (total: number, item: any) => total + item.quantidade,
+      0
+    );
+  }
 
   giraPorTempo(segundos: number = 3): void {
     // Se já estiver girando, cancela o timer anterior para reiniciar

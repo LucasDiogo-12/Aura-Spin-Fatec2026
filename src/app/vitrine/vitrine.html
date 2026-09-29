@@ -6,6 +6,12 @@
 </div>
 
 <div class="row mb-4">
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+  </div>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4"></div>
+    <div *ngIf="mostrarAlerta" class="alert alert-success alert-dismissible fade show" role="alert" >
+      <strong>Sucesso!</strong> Produto adicionado ao carrinho!
+    </div>
   <div class="col-md-6">
     <h3>Catálogo de Produtos</h3>
   </div>

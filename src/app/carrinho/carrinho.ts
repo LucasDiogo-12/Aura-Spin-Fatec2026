@@ -84,6 +84,7 @@ export class Carrinho {
       JSON.stringify(carrinho)
     );
 
+    window.dispatchEvent(new Event('carrinhoAtualizado'));
   }
 
   get subtotal() {

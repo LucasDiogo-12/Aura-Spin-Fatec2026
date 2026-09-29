@@ -1,0 +1,21 @@
+.spinner-simples {
+  width: 90px;
+  height: 90px;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+@keyframes rodar {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(3240deg); /* velocidade do giro */
+  }
+}
+
+/* Quando executa a classe .rodando ele gira por tantos segundos */
+.spinner-simples.rodando {
+  animation: rodar 5s ease-out;
+}

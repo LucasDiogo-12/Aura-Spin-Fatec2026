@@ -1,7 +1,13 @@
-<p>busca works!</p>
 <div class="container py-4">
   
   <div class="row mb-4">
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+  </div>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4"></div>
+    <div *ngIf="mostrarAlerta" class="alert alert-success alert-dismissible fade show" role="alert" >
+      <strong>Sucesso!</strong> Produto adicionado ao carrinho!
+    </div>
+
     <div class="col-12 text-center">
       <h2 class="fw-bold">Pesquisar Fidget Spinners</h2>
       <p class="text-muted">Encontre seu modelo favorito por nome, cor ou categoria.</p>
@@ -55,10 +61,7 @@
     @for (produto of resultados; track produto.id) {
       <div class="col">
         <div class="card h-100 shadow-sm border-0 rounded-3 overflow-hidden">
-          <button type="button" [routerLink]="['/detalhe', produto.id]" style="border: none; background: none; padding: 0;">
-          <img [src]="produto.imagem" [alt]="produto.nome" class="card-img-top">
-          </button>
-          
+          <img [src]="produto.imagem" class="card-img-top object-fit-cover" [alt]="produto.nome" height="200">
           <div class="card-body d-flex flex-column">
             <h5 class="card-title fs-6 fw-bold">{{ produto.nome }}</h5>
             <p class="card-text text-muted small flex-grow-1">{{ produto.descricao }}</p>

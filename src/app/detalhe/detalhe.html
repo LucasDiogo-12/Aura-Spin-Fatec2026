@@ -1,8 +1,15 @@
-<p>detalhe works!</p>
 
 <div class="container py-5">
   <div class="row g-5">
     <div class="col-lg-6">
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+  </div>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4"></div>
+    <div *ngIf="mostrarAlerta" class="alert alert-success alert-dismissible fade show" role="alert" >
+      <strong>Sucesso!</strong> Produto adicionado ao carrinho!
+    </div>
+
       <div id="carouselProduto" class="carousel slide" data-bs-ride="carousel" >
 
         <div class="carousel-inner">
@@ -12,11 +19,10 @@
           </div>
 
           <div class="carousel-item">
-            <img [src]="produto.imagem" [alt]="produto.nome" class="d-block w-100 rounded" >
-          </div>
-
-          <div class="carousel-item">
-            <img [src]="produto.imagem" [alt]="produto.nome" class="d-block w-100 rounded">
+            <video class="d-block w-100" controls muted >
+            <source src="assets/video-produto.mp4" type="video/mp4">
+            Seu navegador não suporta vídeos.
+            </video>
           </div>
         </div>
 
