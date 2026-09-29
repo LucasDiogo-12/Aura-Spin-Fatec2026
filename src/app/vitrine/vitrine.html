@@ -1,4 +1,4 @@
-<div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
+<div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary banner-destaque">
   <div class="col-lg-8 px-0">
     <h1 class="display-5 fw-bold">Destaques da Semana</h1>
     <p class="lead my-3">Os mais vendidos do momento!</p>
@@ -72,6 +72,8 @@
   </button>
 </div>
 
+<hr>
+
 <div id="promocoes" class="mb-5">
   <div class="d-flex align-items-center mb-3">
     <h3 class="mb-0 text-danger fw-bold">
@@ -114,7 +116,7 @@
                   </div>
 
                   <div class="d-grid gap-1">
-                    <button type="button" class="btn btn-sm btn-success" (click)="adicionarAoCarrinho(promo)">
+                    <button type="button" [routerLink]="['/detalhe', promo.id]" class="btn btn-sm btn-success" (click)="adicionarAoCarrinho(promo)">
                       Aproveitar Oferta
                     </button>
                   </div>
