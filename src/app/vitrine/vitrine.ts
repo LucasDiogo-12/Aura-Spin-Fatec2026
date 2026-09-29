@@ -51,7 +51,7 @@ export const produtos: Produto[] = [
     id: 6,
     nome: 'Fidget Spinner LED Brilha no Escuro',
     preco: 29.90,
-    imagem: 'https://via.placeholder.com/250x200?text=Spinner+LED',
+    imagem: 'assets/FS-Led.png',
     descricao: 'Luzes LED ajustáveis em cada uma das pontas.'
   },
   {

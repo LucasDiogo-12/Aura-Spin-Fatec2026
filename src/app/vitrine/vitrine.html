@@ -18,7 +18,9 @@
   @for (produto of produtosVisiveis; track produto.id) {
     <div class="col">
       <div class="card h-100 shadow-sm">
-        <img [src]="produto.imagem" class="card-img-top" [alt]="produto.nome" >
+        <button type="button" [routerLink]="['/detalhe', produto.id]" style="border: none; background: none; padding: 0;">
+          <img [src]="produto.imagem" [alt]="produto.nome" class="card-img-top">
+        </button>
 
         <div class="card-body d-flex flex-column">
           <h5 class="card-title fs-6">
