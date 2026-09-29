@@ -9,7 +9,7 @@ import { Esqueci } from './esqueci/esqueci';
 
 export const routes: Routes = [
   { path: '', component: Vitrine },
-  { path: 'detalhe', component: Detalhe },
+  { path: 'detalhe/:id', component: Detalhe },
   { path: 'busca', component: Busca },
   { path: 'carrinho', component: Carrinho },
   { path: 'login', component: Login },  

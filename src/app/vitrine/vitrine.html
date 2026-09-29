@@ -31,15 +31,17 @@
             <span class="fs-5 fw-bold d-block mb-2">
               R$ {{ produto.preco.toFixed(2) }}
             </span>
+
             <div class="d-grid gap-2">
-              <a routerLink="/detalhe"class="btn btn-sm btn-outline-primary">
+              <a [routerLink]="['/detalhe', produto.id]" class="btn btn-sm btn-primary" >
                 Ver Detalhes
               </a>
-              <a routerLink="/carrinho" class="btn btn-sm btn-success">
-                Adicionar ao Carrinho
-              </a>
 
+              <button  type="button" class="btn btn-sm btn-success" (click)="adicionarAoCarrinho(produto)"               >
+                Adicionar ao Carrinho
+              </button>
             </div>
+
           </div>
         </div>
       </div>
@@ -48,7 +50,6 @@
 </div>
 
 <div class="d-flex justify-content-center gap-3 mt-4">
-
   <button type="button" class="btn btn-dark" (click)="anterior()" aria-label="Anterior">
     <i class="bi bi-arrow-bar-left"></i>
     Anterior
