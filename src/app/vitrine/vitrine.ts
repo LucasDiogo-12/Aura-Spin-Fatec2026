@@ -64,7 +64,7 @@ export const produtos: Produto[] = [
     id: 8,
     nome: 'Fidget Spinner Camuflado Verde',
     preco: 9.99,
-    imagem: 'assets/FS-Camuflado.png',
+    imagem: 'assets/FS-CamuVerde.png',
     descricao: 'Estampa camuflada militar verde com peso balanceado.'
   }
 ];
