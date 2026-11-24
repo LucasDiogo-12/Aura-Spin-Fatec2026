@@ -1,0 +1,12 @@
+<div class="row justify-content-center py-4"><div class="col-md-7 col-lg-6"><div class="card shadow-sm"><div class="card-body p-4">
+<h2 class="mb-3">Criar conta Aura Spin</h2><p class="text-muted">Seus dados serão enviados ao cadastro de clientes da API.</p>
+<div *ngIf="erro" class="alert alert-danger">{{erro}}</div><div *ngIf="mensagem" class="alert alert-success">{{mensagem}}</div>
+<form (ngSubmit)="cadastrar()">
+<label class="form-label">Nome completo</label><input class="form-control mb-3" name="nome" [(ngModel)]="cliente.nome" required>
+<label class="form-label">Email</label><input class="form-control mb-3" type="email" name="email" [(ngModel)]="cliente.email" required>
+<label class="form-label">Senha</label><input class="form-control mb-3" type="password" name="senha" [(ngModel)]="cliente.senha" required>
+<label class="form-label">Telefone</label><input class="form-control mb-3" name="telefone" [(ngModel)]="cliente.telefone">
+<label class="form-label">Documento</label><input class="form-control mb-3" name="documento" [(ngModel)]="cliente.documento">
+<label class="form-label">Endereço</label><input class="form-control mb-3" name="logradouro" [(ngModel)]="cliente.logradouro">
+<button class="btn btn-primary w-100" [disabled]="enviando">{{enviando?'Enviando...':'Cadastrar cliente'}}</button>
+</form></div></div></div></div>
