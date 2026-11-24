@@ -10,7 +10,7 @@ describe('Busca', () => {
       imports: [Busca],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(Busca);
+    fixture = TestBed.createComponent(Busca); 
     component = fixture.componentInstance;
     await fixture.whenStable();
   });
